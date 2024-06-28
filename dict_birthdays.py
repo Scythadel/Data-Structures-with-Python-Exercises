@@ -11,4 +11,4 @@ except:
     if who == str and KeyError:
         print("That person is not present in our records")
 except TypeError:
-    print("Please enter a valid input")
+    print("Please enter a valid value")
