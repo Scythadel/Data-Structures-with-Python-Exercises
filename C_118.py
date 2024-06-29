@@ -1,13 +1,16 @@
 diff = 2
+k = 0
 b = [0]
 a = []
 for i in range(0, 90, 2):
     a.append(i)
-    if a[i] - a[i-1] == 2:
+    if a[k] - a[k-1] == 2:
         diff = diff + 2
-        for j in range(2, 92, diff):
-            b.append(j)
+        for j in range(b[len(b) - 1], 92):
+            b.append(j + diff)
+            break
+        k = k + 1
     else:
-        continue
+        k = k + 1
 
 print(b)
