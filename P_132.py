@@ -4,7 +4,6 @@ def calc():
     arithmetic_operator = None
     arithmetic_operators = ["+", "-", "/", "*"]
     command = "Start" or "start"
-    command = input("Please type start to begin calculations: ")
     while command != "" or command != "Stop":
         command = str(input("What would you like to perform?: "))
         if command == "Clear" or command == "clear":
@@ -17,14 +16,15 @@ def calc():
             except ValueError:
                 return "Enter a number"
         elif arithmetic_operator == None:
-            for i in arithmetic_operators:
-                if i == command:
-                    arithmetic_operator = command
+            if command in arithmetic_operators:
+                arithmetic_operator = command
         else:
             try:
                 num2 = int(command)
+                break
             except ValueError:
                 return "Enter a number"
+            
             
 
 
@@ -32,19 +32,11 @@ def calc():
         print(num1 + num2)
     elif arithmetic_operator == "-":
         print(num1 - num2)
-    elif arithmetic_operator == "*":
-        print(num1 / num2)
     elif arithmetic_operator == "/":
+        print(num1 / num2)
+    elif arithmetic_operator == "*":
         print(num1 * num2)
     else:
         print('Enter a proper operator')
 
 print(calc())
-        
-        
-
-        
-
-
-
-            
