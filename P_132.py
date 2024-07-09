@@ -5,7 +5,7 @@ def calc():
     arithmetic_operators = ["+", "-", "/", "*"]
     command = "Start" or "start"
     while command != "" or command != "Stop":
-        command = str(input("What would you like to perform?: "))
+        command = str(input("Enter the next value/operator: "))
         if command == "Clear" or command == "clear":
             num1 = None
             num2 = None
@@ -26,8 +26,6 @@ def calc():
                 return "Enter a number"
             
             
-
-
     if arithmetic_operator == "+":
         print(num1 + num2)
     elif arithmetic_operator == "-":
